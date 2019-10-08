@@ -1,0 +1,42 @@
+<definitions name="DistrictService" targetNamespace="http://www.steepsouth.com/wsdl/DistrictService.wsdl" 
+  xmlns="http://schemas.xmlsoap.org/wsdl/" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:tns="http://www.steepsouth.com/wsdl/DistrictService.wsdl" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <message name="getDistrictRequest">
+    <part name="districtId" type="xsd:string"/>
+  </message>
+
+  <message name="getDistrictResponse">
+    <part name="districtId" type="xsd:string"/>
+    <part name="districtName" type="xsd:string"/>
+  </message>
+
+  <portType name="District_PortType">
+    <operation name="getDistrictList">
+      <input message="tns:getDistrictRequest"/>
+      <output message="tns:getDistrictResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="District_Binding" type="tns:District_PortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getDistrictList">
+      <soap:operation soapAction="getDistrictList"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:steepsouth:districtservice" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:steepsouth:districtservice" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="District_Service">
+    <documentation>WSDL File for DistrictService</documentation>
+    <port binding="tns:District_Binding" name="District_Port">
+      <soap:address location="http://localhost:8080/districtsoapservice/" />
+    </port>
+  </service>
+</definitions>

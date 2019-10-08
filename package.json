@@ -1,0 +1,24 @@
+{
+  "name": "districtsoapservice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node districtservice.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAVEENKUMARANDI/DistrictSOAPService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAVEENKUMARANDI/DistrictSOAPService/issues"
+  },
+  "homepage": "https://github.com/NAVEENKUMARANDI/DistrictSOAPService#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "soap": "^0.29.0"
+  }
+}
